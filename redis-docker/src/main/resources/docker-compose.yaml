@@ -1,0 +1,10 @@
+version: '3'
+services:
+  redis:
+    image: bitnami/redis:latest
+    ports:
+      - "6379:6379"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes  # 开发环境使用，生产需替换为REDIS_PASSWORD
+    volumes:
+      - ./redis_data:/bitnami/redis/data
